@@ -27,8 +27,7 @@ const Node = ({ node }) => {
                   <circle fill="lightgrey" stroke="grey" r={10} />
               )
         }
-        <g position="relative"
-        >
+        <g position="relative">
           <text>
             {node.fam}
           </text>
@@ -41,7 +40,6 @@ const Node = ({ node }) => {
   );
 };
 
-// TODO: make component independent of restProps
 const Line = ({ link, ...restProps }) => {
   let stroke = '#000';
   if (link.source.fam) {
@@ -51,7 +49,11 @@ const Line = ({ link, ...restProps }) => {
   }
   return (
       <>
-        <line stroke={stroke} {...restProps}></line>
+        <line
+            stroke={stroke}
+            {...restProps}
+            marker-end="url(#markerArrow)"
+        ></line>
         {link.type}
       </>
   )
@@ -97,6 +99,6 @@ const App = () => {
             />
         </div>
     );
-}
+};
 
 export default App;

@@ -7,11 +7,10 @@ import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Close from '@material-ui/icons/Close';
-import Graph from 'react-graph-network';
-import tolstoy from './tolstoy';
+import CodeAccordion from './CodeAccordion'
 
 
-const Switcher = ({ props, prop, handlePropsChange, }) => {
+const Switcher = ({ props, prop, handlePropsChange, Line}) => {
     const [switchedOn, setSwitchedOn] = useState(props[prop]);
 
     const toggleState = (e) => {
@@ -37,20 +36,6 @@ const Switcher = ({ props, prop, handlePropsChange, }) => {
 };
 
 const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
-
-    const code =
-`
-<Graph
-    data={tolstoy}
-    NodeComponent={Node}
-    LineComponent={Line}
-    nodeDistance=${props.nodeDistance}
-    zoomDepth=${props.zoomDepth}
-    hoverOpacity=${props.hoverOpacity}
-    enableDrag=${props.enableDrag}
-    pullIn=${props.pullIn}
-/>
-`;
 
     return (
         <Drawer
@@ -86,11 +71,7 @@ const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
                         )
                     })
                 }
-                <Box style={{ backgroundColor: '#eee'}} px={2} pb={1}>
-                    <pre>
-                        {code}
-                    </pre>
-                </Box>
+                <CodeAccordion props={props}/>
             </Box>
         </Drawer>
     )
