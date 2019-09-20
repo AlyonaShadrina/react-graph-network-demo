@@ -1,7 +1,6 @@
 import Drawer from '@material-ui/core/Drawer';
 import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
@@ -59,9 +58,8 @@ const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
                             )
                         }
                         return (
-                            <div>
+                            <div key={i}>
                                 <TextField
-                                    key={i}
                                     value={props[prop]}
                                     onChange={(e) => handlePropsChange({ name: prop, value: e.target.value })}
                                     label={prop}

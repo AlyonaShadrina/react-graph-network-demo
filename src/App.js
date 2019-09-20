@@ -42,19 +42,12 @@ const Node = ({ node }) => {
 
 const Line = ({ link, ...restProps }) => {
   let stroke = '#000';
-  if (link.source.fam) {
-    if (link.source.fam.includes('Толст')) {
-      stroke = 'red'
-    }
-  }
   return (
       <>
         <line
-            stroke={stroke}
             {...restProps}
-            marker-end="url(#markerArrow)"
-        ></line>
-        {link.type}
+            stroke={stroke}
+        />
       </>
   )
 };
