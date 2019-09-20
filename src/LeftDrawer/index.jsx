@@ -1,40 +1,37 @@
-import Drawer from '@material-ui/core/Drawer';
-import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Switch from '@material-ui/core/Switch';
-import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
+import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
+import TextField from '@material-ui/core/TextField';
 import Close from '@material-ui/icons/Close';
+import React from 'react';
 import CodeAccordion from './CodeAccordion'
+import Switcher from './Switcher';
 
-
-const Switcher = ({ props, prop, handlePropsChange, Line}) => {
-    const [switchedOn, setSwitchedOn] = useState(props[prop]);
-
-    const toggleState = (e) => {
-        setSwitchedOn(e.target.checked);
-        handlePropsChange({ name: prop, value: e.target.checked });
-    };
-
-    return (
-        <Grid container justify="space-between" alignItems="center">
-            <Grid item>
-                {prop}
-            </Grid>
-            <Grid item>
-                <Switch
-                    checked={switchedOn}
-                    onChange={toggleState}
-                    inputProps={{ 'aria-label': 'secondary checkbox' }}
-                />
-            </Grid>
-
-        </Grid>
-    )
-};
 
 const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
+
+    const settings = Object.keys(props).map((prop, i) => {
+            if (typeof props[prop] === 'boolean') {
+                return (
+                    <Switcher
+                        key={i}
+                        handlePropsChange={handlePropsChange}
+                        props={props}
+                        prop={prop}
+                    />
+                )
+            }
+            return (
+                <div key={i}>
+                    <TextField
+                        value={props[prop]}
+                        onChange={(e) => handlePropsChange({ name: prop, value: e.target.value })}
+                        label={prop}
+                        margin="normal"
+                    />
+                </div>
+            )
+        });
 
     return (
         <Drawer
@@ -45,30 +42,7 @@ const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
                 <IconButton onClick={() => setOpened(false)} title="close serttings panel">
                     <Close />
                 </IconButton>
-                {
-                    Object.keys(props).map((prop, i) => {
-                        if (typeof props[prop] === 'boolean') {
-                            return (
-                                <Switcher
-                                    key={i}
-                                    handlePropsChange={handlePropsChange}
-                                    props={props}
-                                    prop={prop}
-                                />
-                            )
-                        }
-                        return (
-                            <div key={i}>
-                                <TextField
-                                    value={props[prop]}
-                                    onChange={(e) => handlePropsChange({ name: prop, value: e.target.value })}
-                                    label={prop}
-                                    margin="normal"
-                                />
-                            </div>
-                        )
-                    })
-                }
+                {settings}
                 <CodeAccordion props={props}/>
             </Box>
         </Drawer>

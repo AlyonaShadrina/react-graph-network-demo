@@ -70,14 +70,12 @@ const App = () => {
     };
 
     return (
-
         <div style={{ height: '100vh' }}>
             <LeftDrawer
                 opened={opened}
                 setOpened={setOpened}
                 props={props}
                 handlePropsChange={handlePropsChange}
-                setOpened={setOpened}
             />
             <Box p={2} style={{ position: 'absolute' }}>
                 <IconButton onClick={() => setOpened(true)} title="open settings">
