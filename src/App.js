@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Graph from 'react-graph-network';
+import MenuOpen from '@material-ui/icons/MenuOpen';
+import IconButton from '@material-ui/core/IconButton';
+import Box from '@material-ui/core/Box';
 import LeftDrawer from './LeftDrawer';
 import tolstoy from './tolstoy';
 
 
 const Node = ({ node }) => {
-  // console.log('node', node);
   return (
       <>
         {
@@ -61,11 +63,11 @@ const App = () => {
     const [opened, setOpened] = useState(false);
 
     const [props, setProps] = useState({
-        nodeDistance: 200,
-        zoomDepth: 0,
+        nodeDistance: 300,
+        zoomDepth: 3,
         hoverOpacity: .3,
         enableDrag: true,
-        pullIn: true,
+        pullIn: false,
     });
 
     const handlePropsChange = ({ name, value }) => {
@@ -80,8 +82,13 @@ const App = () => {
                 setOpened={setOpened}
                 props={props}
                 handlePropsChange={handlePropsChange}
+                setOpened={setOpened}
             />
-            <button onClick={() => setOpened(true)}>open settings</button>
+            <Box p={2} style={{ position: 'absolute' }}>
+                <IconButton onClick={() => setOpened(true)} title="open settings">
+                    <MenuOpen />
+                </IconButton>
+            </Box>
             <Graph
                 data={tolstoy}
                 NodeComponent={Node}
