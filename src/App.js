@@ -60,15 +60,17 @@ const Line = ({ link, ...restProps }) => {
 const App = () => {
     const [opened, setOpened] = useState(false);
 
-    // const [propArray, setPropArray] = React.useState({
-    //     enableDrag: false,
-    // });
-    //
-    // const handleChange = name => event => {
-    //     console.log('name', name);
-    //     console.log('event.target.checked', event.target.checked);
-    //     setPropArray({ ...propArray, [name]: event.target.checked });
-    // };
+    const [props, setProps] = useState({
+        nodeDistance: 200,
+        zoomDepth: 0,
+        hoverOpacity: .3,
+        enableDrag: true,
+        pullIn: true,
+    });
+
+    const handlePropsChange = ({ name, value }) => {
+        setProps({ ...props, [name]: value})
+    };
 
     return (
 
@@ -76,17 +78,15 @@ const App = () => {
             <LeftDrawer
                 opened={opened}
                 setOpened={setOpened}
+                props={props}
+                handlePropsChange={handlePropsChange}
             />
             <button onClick={() => setOpened(true)}>open settings</button>
             <Graph
                 data={tolstoy}
-                nodeDistance={200}
                 NodeComponent={Node}
                 LineComponent={Line}
-                // pullIn
-                zoomDepth={3}
-                enableDrag
-                hoverOpacity
+                {...props}
             />
         </div>
     );

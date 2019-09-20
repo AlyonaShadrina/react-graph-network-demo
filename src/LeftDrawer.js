@@ -1,27 +1,23 @@
 import Drawer from '@material-ui/core/Drawer';
 import React, { useState } from 'react';
 import Switch from '@material-ui/core/Switch';
+import Input from '@material-ui/core/Input';
 
 
-const Switcher = ({ label, setProp, value }) => {
-    const [switchedOn, setSwitchedOn] = useState(value);
-
-    console.log('setProp', setProp);
+const Switcher = ({ props, prop, handlePropsChange, }) => {
+    const [switchedOn, setSwitchedOn] = useState(props[prop]);
 
     const toggleState = (e) => {
-        console.log('toggleState', e.target.checked)
         setSwitchedOn(e.target.checked);
-        // e.target.value = e.target.checked;
-        // setProp(e);
+        handlePropsChange({ name: prop, value: e.target.checked });
     };
 
     return (
         <div>
-            {label}
+            {prop}
             <Switch
                 checked={switchedOn}
                 onChange={toggleState}
-                // value={switchedOn}
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
             />
         </div>
@@ -29,23 +25,37 @@ const Switcher = ({ label, setProp, value }) => {
     )
 };
 
-const LeftDrawer = ({ opened, setOpened, propArray, handleChange }) => {
+const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
     return (
         <Drawer
             open={opened}
             onClose={() => setOpened(false)}
         >
-            drawer
-            {/*{*/}
-            {/*    Object.keys(propArray).map((prop, i) => (*/}
-            {/*        <Switcher*/}
-            {/*            key={ i}*/}
-            {/*            label={prop}*/}
-            {/*            // value={propArray[prop]}*/}
-            {/*            setProp={handleChange(prop)}/>*/}
-            {/*    ))*/}
-            {/*}*/}
+            {
+                Object.keys(props).map((prop, i) => {
+                    if (typeof props[prop] === 'boolean') {
+                        return (
+                            <Switcher
+                                key={i}
+                                handlePropsChange={handlePropsChange}
+                                props={props}
+                                prop={prop}
+                            />
+                        )
+                    }
+                    return (
+                        <div>
+                            {prop}
+                            <Input
+                                key={i}
+                                value={props[prop]}
+                                onChange={(e) => handlePropsChange({ name: prop, value: e.target.value })}
+                            />
+                        </div>
 
+                    )
+                })
+            }
         </Drawer>
     )
 };
