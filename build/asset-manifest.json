@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-graph-network-demo/static/css/main.7ad13e47.chunk.css",
-    "main.js": "/react-graph-network-demo/static/js/main.c860c94e.chunk.js",
-    "main.js.map": "/react-graph-network-demo/static/js/main.c860c94e.chunk.js.map",
-    "runtime-main.js": "/react-graph-network-demo/static/js/runtime-main.f8439af7.js",
-    "runtime-main.js.map": "/react-graph-network-demo/static/js/runtime-main.f8439af7.js.map",
-    "static/js/2.1395cfee.chunk.js": "/react-graph-network-demo/static/js/2.1395cfee.chunk.js",
-    "static/js/2.1395cfee.chunk.js.map": "/react-graph-network-demo/static/js/2.1395cfee.chunk.js.map",
-    "index.html": "/react-graph-network-demo/index.html",
-    "precache-manifest.d3335b443a9f3ccb62d59bf25a5cbe27.js": "/react-graph-network-demo/precache-manifest.d3335b443a9f3ccb62d59bf25a5cbe27.js",
-    "service-worker.js": "/react-graph-network-demo/service-worker.js",
-    "static/css/main.7ad13e47.chunk.css.map": "/react-graph-network-demo/static/css/main.7ad13e47.chunk.css.map"
+    "main.css": "/react-graph-network-demo/build/static/css/main.7ad13e47.chunk.css",
+    "main.js": "/react-graph-network-demo/build/static/js/main.2b226dff.chunk.js",
+    "main.js.map": "/react-graph-network-demo/build/static/js/main.2b226dff.chunk.js.map",
+    "runtime-main.js": "/react-graph-network-demo/build/static/js/runtime-main.0f63bcc4.js",
+    "runtime-main.js.map": "/react-graph-network-demo/build/static/js/runtime-main.0f63bcc4.js.map",
+    "static/js/2.1395cfee.chunk.js": "/react-graph-network-demo/build/static/js/2.1395cfee.chunk.js",
+    "static/js/2.1395cfee.chunk.js.map": "/react-graph-network-demo/build/static/js/2.1395cfee.chunk.js.map",
+    "index.html": "/react-graph-network-demo/build/index.html",
+    "precache-manifest.7a31a5d865ec7af2ee317f313076908d.js": "/react-graph-network-demo/build/precache-manifest.7a31a5d865ec7af2ee317f313076908d.js",
+    "service-worker.js": "/react-graph-network-demo/build/service-worker.js",
+    "static/css/main.7ad13e47.chunk.css.map": "/react-graph-network-demo/build/static/css/main.7ad13e47.chunk.css.map"
   }
 }
