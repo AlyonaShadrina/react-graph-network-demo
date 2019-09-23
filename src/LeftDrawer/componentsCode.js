@@ -42,30 +42,38 @@ const Node = ({ node }) => {
 
     return (
         <>
-            {
-                node.img
-                    ? (
-                        <image
-                            href={node.img}
-                            x="0"
-                            y="0"
-                            height={ sizesImg.radius * 2 }
-                            width={ sizesImg.radius * 2 }
-                            style={{
-                                transform: 'translate(-\${sizesImg.radius}px, -\${sizesImg.radius}px)',
-                            }}
-                        />
-                    )
-                    : (
-                        <circle
-                            fill={'light\${stroke}'}
-                            stroke={stroke}
-                            r={sizes.radius}
-                        />
-                    )
+            {node.img
+                ? (
+                    <image
+                        href={node.img}
+                        x="0"
+                        y="0"
+                        height={ sizesImg.radius * 2 }
+                        width={ sizesImg.radius * 2 }
+                        style={{
+                            transform: 'translate(-\${sizesImg.radius}px, -\${sizesImg.radius}px)',
+                        }}
+                    />
+                )
+                : (
+                    <circle
+                        fill={'light\${stroke}'}
+                        stroke={stroke}
+                        r={sizes.radius}
+                    />
+                )
             }
             <g style={{ fontSize: sizes.textSize + 'px', }}>
-                <text x={node.img ? sizesImg.radius + 7 : sizes.radius + 7 } y={node.img ? (sizesImg.radius / 2) - sizesImg.textSize : sizes.radius / 2}>
+                <text 
+                    x={node.img 
+                        ? sizesImg.radius + 7 
+                        : sizes.radius + 7 
+                    } 
+                    y={node.img 
+                        ? (sizesImg.radius / 2) - sizesImg.textSize 
+                        : sizes.radius / 2
+                    }
+                >
                     {node.family}
                 </text>
             </g>

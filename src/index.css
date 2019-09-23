@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.MuiDrawer-paperAnchorLeft {
+  max-width: 100%;
+}
+.MuiDrawer-paperAnchorLeft .MuiTextField-root{
+  width: 100%;
+}
+
+.MuiDrawer-modal pre {
+  overflow-x: auto;
+  width: 420px;
+  max-width: 100%;
+}

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.731f156c.chunk.css",
-    "main.js": "/static/js/main.5ad32c32.chunk.js",
-    "main.js.map": "/static/js/main.5ad32c32.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9e268a8d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9e268a8d.js.map",
-    "static/js/2.5ad5976b.chunk.js": "/static/js/2.5ad5976b.chunk.js",
-    "static/js/2.5ad5976b.chunk.js.map": "/static/js/2.5ad5976b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.f755417d770034aa5201181e10f00531.js": "/precache-manifest.f755417d770034aa5201181e10f00531.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.731f156c.chunk.css.map": "/static/css/main.731f156c.chunk.css.map"
+    "main.css": "/react-graph-network-demo/static/css/main.731f156c.chunk.css",
+    "main.js": "/react-graph-network-demo/static/js/main.39ebe869.chunk.js",
+    "main.js.map": "/react-graph-network-demo/static/js/main.39ebe869.chunk.js.map",
+    "runtime-main.js": "/react-graph-network-demo/static/js/runtime-main.f8439af7.js",
+    "runtime-main.js.map": "/react-graph-network-demo/static/js/runtime-main.f8439af7.js.map",
+    "static/js/2.1395cfee.chunk.js": "/react-graph-network-demo/static/js/2.1395cfee.chunk.js",
+    "static/js/2.1395cfee.chunk.js.map": "/react-graph-network-demo/static/js/2.1395cfee.chunk.js.map",
+    "index.html": "/react-graph-network-demo/index.html",
+    "precache-manifest.bf620a2fc2a751f094e28d9b09f69157.js": "/react-graph-network-demo/precache-manifest.bf620a2fc2a751f094e28d9b09f69157.js",
+    "service-worker.js": "/react-graph-network-demo/service-worker.js",
+    "static/css/main.731f156c.chunk.css.map": "/react-graph-network-demo/static/css/main.731f156c.chunk.css.map"
   }
 }
