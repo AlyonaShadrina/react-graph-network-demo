@@ -36,7 +36,7 @@ const Node = ({ node }) => {
         }
         <g position="relative">
           <text>
-            {node.fam}
+            {node.family}
           </text>
           <text style={{ transform: 'translateY(16px)' }}>
             {node.id}
