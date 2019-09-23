@@ -37,6 +37,7 @@ const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
         <Drawer
             open={opened}
             onClose={() => setOpened(false)}
+            className="drawer"
         >
             <Box p={2}>
                 <IconButton onClick={() => setOpened(false)} title="close serttings panel">

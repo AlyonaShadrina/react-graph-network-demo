@@ -1,49 +1,76 @@
 export const codeLine =
     `
 const Line = ({ link, ...restProps }) => {
-  let stroke = '#000';
-  return (
-      <>
-        <line
-            {...restProps}
-            stroke={stroke}
-        />
-      </>
-  )
+  let familyMatch;
+    tolstoy.nodes.find(obj => {
+        if (obj.id === link.source && obj.family) {
+            familyMatch = obj.family.match(/Tolst|Trubetsk|Volkonsk|Gorchakov/);
+        }
+    });
+    const stroke = colorSwitch(familyMatch);
+
+    return (
+        <>
+            <line
+                {...restProps}
+                stroke={stroke}
+            />
+        </>
+    )
 };
 `;
 export const codeNode =
     `
 const Node = ({ node }) => {
-  return (
-      <>
-        {
-          node.img
-              ? (
-                  <image
-                      href={node.img}
-                      x="0"
-                      y="0"
-                      height="50" width="50"
-                      style={{
-                        transform: 'translate(-25px, -25px)'
-                      }}
-                  />
-              )
-              : (
-                  <circle fill="lightgrey" stroke="grey" r={10} />
-              )
-        }
-        <g position="relative">
-          <text>
-            {node.family}
-          </text>
-          <text style={{ transform: 'translateY(16px)' }}>
-            {node.id}
-          </text>
-        </g>
+    // colors
+    const familyMatch = node.family.match(/Tolst|Trubetsk|Volkonsk|Gorchakov/);
+    const stroke = colorSwitch(familyMatch);
 
-      </>
-  );
+    // sizes
+    const sizes = {
+        radius: radius,
+        textSize: fontSize,
+        textX: radius * 1.5,
+        textY: radius / 2,
+    };
+    const sizesImg = {
+        radius: 30,
+        textSize: fontSize,
+        textX: 30 * 1.5,
+        textY: 30 / 2,
+    };
+
+    return (
+        <>
+            {
+                node.img
+                    ? (
+                        <image
+                            href={node.img}
+                            x="0"
+                            y="0"
+                            height={ sizesImg.radius * 2 }
+                            width={ sizesImg.radius * 2 }
+                            style={{
+                                transform: 'translate(-\${sizesImg.radius}px, -\${sizesImg.radius}px)',
+                            }}
+                        />
+                    )
+                    : (
+                        <circle
+                            fill={'light\${stroke}'}
+                            stroke={stroke}
+                            r={sizes.radius}
+                        />
+                    )
+            }
+            <g style={{ fontSize: sizes.textSize + 'px', }}>
+                <text x={node.img ? sizesImg.radius + 7 : sizes.radius + 7 } y={node.img ? (sizesImg.radius / 2) - sizesImg.textSize : sizes.radius / 2}>
+                    {node.family}
+                </text>
+            </g>
+
+        </>
+    );
 };
 `;

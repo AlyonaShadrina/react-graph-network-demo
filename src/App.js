@@ -78,9 +78,6 @@ const Node = ({ node }) => {
                     )
             }
             <g style={{ fontSize: sizes.textSize + 'px', }}>
-                <text>
-                    {/*{node.name}*/}
-                </text>
                 <text x={node.img ? sizesImg.radius + 7 : sizes.radius + 7 } y={node.img ? (sizesImg.radius / 2) - sizesImg.textSize : sizes.radius / 2}>
                     {node.family}
                 </text>
