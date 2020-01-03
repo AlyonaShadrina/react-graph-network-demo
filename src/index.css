@@ -15,6 +15,7 @@ code {
 
 .MuiDrawer-paperAnchorLeft {
   max-width: 100%;
+  width: 350px;
 }
 .MuiDrawer-paperAnchorLeft .MuiTextField-root{
   width: 100%;

@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import TextField from '@material-ui/core/TextField';
 import Close from '@material-ui/icons/Close';
 import React from 'react';
+
 import CodeAccordion from './CodeAccordion'
 import Switcher from './Switcher';
 
@@ -37,7 +38,8 @@ const LeftDrawer = ({ opened, setOpened, props, handlePropsChange }) => {
         <Drawer
             open={opened}
             onClose={() => setOpened(false)}
-            className="drawer"
+            // className="drawer"
+            style={{ maxWidth: 300}}
         >
             <Box p={2}>
                 <IconButton onClick={() => setOpened(false)} title="close serttings panel">

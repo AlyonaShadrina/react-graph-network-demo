@@ -1,30 +1,7 @@
-export const lineExample = {
-    title: 'Line',
-    description: 'If you have specific logic in your Line component, be consider link could be both id and object component.',
-    code: `
-const Line = ({ link, ...restProps }) => {
-    let familyMatch;
+import React from 'react';
+import { colorSwitch } from '../helpers';
 
-    tolstoy.nodes.find(obj => {
-        if ((obj.id === link.source || obj.id === link.source.id) && obj.family) {
-            familyMatch = obj.family.match(/Tolst|Trubetsk|Volkonsk|Gorchakov/);
-        }
-    });
 
-    const stroke = colorSwitch(familyMatch);
-
-    return (
-        <line
-            {...restProps}
-            stroke={stroke}
-        />
-    )
-};
-`,
-};
-export const nodeExample = {
-    title: 'Node',
-    code: `
 const fontSize = 14;
 const radius = 10;
 
@@ -59,13 +36,13 @@ const Node = ({ node }) => {
                             height={sizesImg.radius * 2}
                             width={sizesImg.radius * 2}
                             style={{
-                                transform: \`translate(-\${sizesImg.radius}px, -\${sizesImg.radius}px)\`,
+                                transform: `translate(-${sizesImg.radius}px, -${sizesImg.radius}px)`,
                             }}
                         />
                     )
                     : (
                         <circle
-                            fill={\`light\${stroke}\`}
+                            fill={`light${stroke}`}
                             stroke={stroke}
                             r={sizes.radius}
                         />
@@ -79,9 +56,8 @@ const Node = ({ node }) => {
                     {node.family}
                 </text>
             </g>
-
         </>
     );
 };
-`,
-};
+
+export default Node;
