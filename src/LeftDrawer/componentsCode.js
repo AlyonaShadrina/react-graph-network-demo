@@ -1,6 +1,6 @@
 export const lineExample = {
     title: 'Line',
-    description: 'If you have specific logic in your Line component, be consider link could be both id and object component.',
+    description: 'If you have specific logic in your Line component, consider link could be both id and object component.',
     code: `
 const Line = ({ link, ...restProps }) => {
     let familyMatch;
