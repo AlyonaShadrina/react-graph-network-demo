@@ -9,9 +9,11 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-graph-network": "^1.0.2",
-    "react-scripts": "3.1.2"
+    "react-scripts": "^3.3.0",
+    "source-map-explorer": "^2.2.1"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",

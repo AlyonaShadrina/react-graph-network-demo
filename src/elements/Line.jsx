@@ -10,6 +10,7 @@ const Line = ({ link, ...restProps }) => {
         if ((obj.id === link.source || obj.id === link.source.id) && obj.family) {
             familyMatch = obj.family.match(/Tolst|Trubetsk|Volkonsk|Gorchakov/);
         }
+        return null
     });
 
     const stroke = colorSwitch(familyMatch);
